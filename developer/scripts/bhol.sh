@@ -55,10 +55,10 @@ ACR_PASSWORD=$(jq -r -n '$input.passwords[0].value' --argjson input "$ACR_CREDEN
 
 GITHUB_TOKEN=$MCW_GITHUB_TOKEN
 cd ~/Fabmedical
-echo $GITHUB_TOKEN | gh auth login --with-token
-gh secret set ACR_USERNAME -b "$ACR_USERNAME"
-gh secret set ACR_PASSWORD -b "$ACR_PASSWORD" 
-
+ecdel ho $GITHUB_TOKEN | gh auth login --with-token
+#gh secret set ACR_USERNAME -b "$ACR_USERNAME"
+#gh secret set ACR_PASSWORD -b "$ACR_PASSWORD" 
+gh auth login --with-token
 # Committing repository
 cd ~/Fabmedical
 git branch -m master main
